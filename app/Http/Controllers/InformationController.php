@@ -15,15 +15,15 @@ class InformationController extends Controller
         $footer = Information::all();
         $logo = Banner::where('category', 1)->get()->first();
         $apiwa = Information::all();
-        return view('home.contact', compact('footer','information', 'logo', 'hero','apiwa')); 
+        return view('pages.contact', compact('footer','information', 'logo', 'hero','apiwa')); 
 }
 
     public function footer(){
         $footer = Information::all();
-        return view('home.footer', compact('footer')); 
+        return view('pages.footer', compact('footer')); 
     }
     public function apiwa(){
         $apiwa = Information::all();
-        return view('home.apiwa', compact('apiwa')); 
+        return view('pages.apiwa', compact('apiwa')); 
     }
 }

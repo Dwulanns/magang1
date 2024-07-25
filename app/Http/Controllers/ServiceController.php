@@ -17,7 +17,7 @@ class ServiceController extends Controller
         $footer = Information::all();
         $logo = Banner::where('category', 1)->first();
         $apiwa = Information::all();
-        return view('home.services', compact('service', 'logo','footer', 'hero','apiwa')); // Mengirimkan data ke view
+        return view('pages.services', compact('service', 'logo','footer', 'hero','apiwa')); // Mengirimkan data ke view
 
     }
 }

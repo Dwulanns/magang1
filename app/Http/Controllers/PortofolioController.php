@@ -27,6 +27,6 @@ class PortofolioController extends Controller
         $footer = Information::all();
         $hero = Banner::where('category', 3)->first();
         $logo = Banner::where('category', 1)->first();
-        return view('home.detailclient', compact('category', 'detailclient','apiwa','footer','logo','hero')); 
+        return view('pages.detailclient', compact('category', 'detailclient','apiwa','footer','logo','hero')); 
     }
 }

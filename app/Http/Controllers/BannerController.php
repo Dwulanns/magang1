@@ -13,7 +13,7 @@ class BannerController extends Controller
         public function logo()
     {
         $logo = Banner::where('category', 1)->first();
-        return view('home.header', compact('logo'));
+        return view('pages.header', compact('logo'));
     }
     public function home() {
         $apiwa = Information::all();
@@ -24,7 +24,7 @@ class BannerController extends Controller
         $logo = Banner::where('category', 1)->first();
         $andro = Banner::where('category', 5)->first();
 
-        return view('home.home', compact('home', 'service', 'logo', 'footer', 'client','apiwa', 'andro')); 
+        return view('pages.home', compact('home', 'service', 'logo', 'footer', 'client','apiwa', 'andro')); 
     }
 
     
@@ -36,7 +36,7 @@ class BannerController extends Controller
     // }
     public function hero(){
         $hero = Banner::where('category', 3)->first();
-        return view('home.hero', compact('hero'));
+        return view('pages.hero', compact('hero'));
     }
 
     
@@ -52,7 +52,7 @@ class BannerController extends Controller
         $text = $about->description ?? ''; 
         $title = $about->title ?? ''; 
 
-        return view('home.about', compact('about', 'footer', 'service', 'logo', 'hero', 'apiwa', 'text', 'title'));
+        return view('pages.about', compact('about', 'footer', 'service', 'logo', 'hero', 'apiwa', 'text', 'title'));
     }
 
     

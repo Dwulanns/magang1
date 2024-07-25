@@ -18,7 +18,7 @@ class MediaController extends Controller
         $logo = Banner::where('category', 1)->first();
         $apiwa = Information::all();
 
-        return view('home.video', compact('mediavideo', 'logo', 'footer', 'hero', 'apiwa')); // Corrected 'vidio' to 'videos' and 'vidio' view to 'video'
+        return view('pages.video', compact('mediavideo', 'logo', 'footer', 'hero', 'apiwa')); // Corrected 'vidio' to 'videos' and 'vidio' view to 'video'
     }
 
     public function mediafoto()
@@ -29,6 +29,6 @@ class MediaController extends Controller
         $logo = Banner::where('category', 1)->first();
         $apiwa = Information::all();
 
-        return view('home.foto', compact('mediafoto', 'logo', 'footer', 'hero', 'apiwa')); // Corrected 'vidio' to 'videos' and 'vidio' view to 'video'
+        return view('pages.foto', compact('mediafoto', 'logo', 'footer', 'hero', 'apiwa')); // Corrected 'vidio' to 'videos' and 'vidio' view to 'video'
     }
 }

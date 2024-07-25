@@ -13,7 +13,7 @@ class ClientController extends Controller
     public function client(){
         $client = Client::all(); 
         // dd($client);die;
-        return view('home.client', compact('client')); 
+        return view('pages.client', compact('client')); 
     }
 
     public function ourclient(){
@@ -24,7 +24,7 @@ class ClientController extends Controller
         $hero = Banner::where('category', 3)->first();
         $logo = Banner::where('category', 1)->first();
     
-        return view('home.ourclients', compact('ourclient','apiwa','footer','logo','hero')); 
+        return view('pages.ourclients', compact('ourclient','apiwa','footer','logo','hero')); 
     }
     
     public function detailclient($id){
@@ -35,7 +35,7 @@ class ClientController extends Controller
         $hero = Banner::where('category', 3)->first();
         $logo = Banner::where('category', 1)->first();
 
-        return view('home.detailclient', compact( 'detailclient','apiwa','footer','logo','hero')); 
+        return view('pages.detailclient', compact( 'detailclient','apiwa','footer','logo','hero')); 
     }
    
     
