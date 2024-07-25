@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Carousel</title>
+    <style>
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        #video {
+            padding: 4% 20%;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card-footer a {
+            color: #343A40;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .card-footer a:hover {
+            color: rgb(75, 189, 238);
+        }
+
+        #carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 1s ease; /* Slowed down transition */
+        }
+
+        .carousel-item {
+            flex: 1 0 33.333%; /* Show 3 items per slide */
+            box-sizing: border-box;
+            padding: 0 10px; /* Adjust spacing */
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-image iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .carousel-description {
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            border-top: 1px solid #ddd;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            outline: none;
+        }
+
+        .carousel-button:focus {
+            outline: 2px solid rgb(75, 189, 238);
+        }
+
+        #btn {
+            background-color: transparent;
+            border: 2px solid rgb(75, 189, 238);
+            border-radius: 360px;
+            padding: 1em 2em;
+            font-size: 14px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+            transition: background-color 0.3s, transform 0.3s;
+            color: rgb(75, 189, 238);
+            text-decoration: none;
+        }
+
+        #btn:hover {
+            background-color: rgb(75, 189, 238);
+            color: white;
+            border: none;
+            font-weight: 600;
+            transform: scale(1.05);
+        }
+
+        span {
+            color: rgb(75, 189, 238);
+            font-weight: bold;
+        }
+
+        h3 {
+            padding-top: 2%;
+        }
+
+        @media (max-width: 768px) {
+            #btn {
+                font-size: 12px;
+            }
+
+            .carousel-item {
+                flex: 1 0 90%; /* Show fewer items per slide on smaller screens */
+                padding: 0 5px; /* Adjust spacing */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pt-5">
+        <div class="container-fluid" id="video">
+            <div class="col-md-12 text-center mt-4">
+                <h3 data-aos="zoom-out-right" data-aos-duration="10000">
+                    <!-- <span>VIDEO TERBARU</span> -->
+                </h3>
+
+                <div id="carousel" class="carousel">
+                    <div class="carousel-inner">
+                        <!-- Carousel items -->
+                        <div class="carousel-item">
+                            <div class="card" data-aos="fade-down" data-aos-duration="10000">
+                                <div class="carousel-image">
+                                    <iframe src="https://www.youtube.com/embed/Lzp0-WZG560" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-description">                       
+                                    <p>This is a description of the first video.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" data-aos="fade-down" data-aos-duration="10000">
+                                <div class="carousel-image">
+                                    <iframe src="https://www.youtube.com/embed/JkjvBuacvgU" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-description">
+                                    <p>This is a description of the second video.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" data-aos="fade-down" data-aos-duration="10000">
+                                <div class="carousel-image">
+                                    <iframe src="https://www.youtube.com/embed/JkjvBuacvgU" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-description">
+                                    <p>This is a description of the third video.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" data-aos="fade-down" data-aos-duration="10000">
+                                <div class="carousel-image">
+                                    <iframe src="https://www.youtube.com/embed/JkjvBuacvgU" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-description">
+                                    <p>This is a description of the fourth video.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more carousel items here -->
+                    </div>
+                    <div class="carousel-buttons">
+                        <button class="carousel-button" id="prev" aria-label="Previous Slide">&lt;</button>
+                        <button class="carousel-button" id="next" aria-label="Next Slide">&gt;</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselInner = document.querySelector('.carousel-inner');
+            const items = document.querySelectorAll('.carousel-item');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+            let index = 0;
+
+            const updateCarousel = () => {
+                const offset = -index * 100;
+                carouselInner.style.transform = `translateX(${offset}%)`;
+            };
+
+            prevButton.addEventListener('click', () => {
+                index = (index > 0) ? index - 1 : Math.ceil(items.length / 3) - 1; // Adjust for 3 items per slide
+                updateCarousel();
+            });
+
+            nextButton.addEventListener('click', () => {
+                index = (index < Math.ceil(items.length / 3) - 1) ? index + 1 : 0; // Adjust for 3 items per slide
+                updateCarousel();
+            });
+
+            setInterval(() => {
+                nextButton.click();
+            }, 7000); // Adjust the interval as needed for slower rotation
+        });
+    </script>
+</body>
+</html>
